@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title> Emergeny QR Generator</title>
+        <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+    <h1>Welcome To Emergency QR Generator</h1>
+    <a id="link" href="info.html">more info</a>
+    </header>
+    <section id="emergency-info">
+        <h2> Enter your emergency information:</h2>
+        <div id="qrtext">
+        <form id="details">
+          
+            <label>Name</label>
+            <input type="text" id="name">
+            <label>emergency contact 1</label>
+            <input type="tel" id="contact1" >
+            <label>emergency contact 2</label>
+            <input type="tel" id="contact2" >
+            
+            <button type="button" onclick="generateQR()">generate QR </button>
+        </form>
+        </div>
+        <div id="imgBox">
+            <img src="" id="qrimg">
+            <p class="scan-text">Scan me for emergency contacts</p>
+            <button onclick="downloadPDF()" class="downloadbtn">Download QR as PDF</button>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+    let qrimg = document.getElementById("qrimg");
+    let imgBox = document.getElementById("imgBox");
+    function generateQR(){
+        let name = document.getElementById("name").value;
+        let phone1 = document.getElementById("contact1").value;
+        let phone2 = document.getElementById("contact2").value;
+
+        let qrData =
+            "Name: " + name + "\n" +
+            "Emergency Contact 1: " + phone1 + "\n" +
+            "Emergency Contact 2: " + phone2;
+
+        qrimg.src =
+        "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="
+        + encodeURIComponent(qrData);
+        imgBox.classList.add("show-img");
+    }
+</script>
+<script>
+    function downloadPDF(){
+        const { jsPDF } = window.jspdf;
+        let pdf = new jsPDF();
+
+        let qrImage = document.getElementById("qrimg");
+
+        pdf.text("Emergency Contact QR Code", 60, 20);
+        pdf.addImage(qrImage, "PNG", 50, 30, 100, 100);
+        pdf.save("Emergency_QR_Code.pdf");
+    }
+</script>
+
+    <footer>@ 2026 emergency QR generator</footer>
+</body>
+</html>
+    

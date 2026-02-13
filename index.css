@@ -1,0 +1,112 @@
+body{
+    background-image: url("images/calm.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* Header */
+header h1{
+    text-align: center;
+}
+#link{
+    position: absolute;
+    top: 40px;
+    right: 90px;
+    text-decoration: none;
+    color: darkmagenta;
+}
+
+#link:hover{
+    color: brown;
+}
+#emergency-info h2{
+    text-align: center;
+    position: fixed;
+    top: 180px;
+    left: 100px;
+    right: 100px;
+}
+/* FORM LAYOUT (THIS SOLVES YOUR PROBLEM 🔥) */
+#details{
+    position: fixed;
+    right: 400px;
+    left: 600px;
+    top: 250px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Inputs */
+#details input{
+    margin-top: 5px;
+    padding: 8px;
+    font-size: 14px;
+}
+
+/* Button */
+#details button{
+    margin-top: 20px;
+    padding: 10px;
+    background-color: teal;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#details button:hover{
+    background-color: darkcyan;
+}
+#imgBox{
+    width: 220px;
+    position: fixed;          /* REQUIRED */
+    top: 250px;
+    right: 80px;              /* pushes QR to right side */
+
+    border-radius: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s;
+    text-align: center;       /* centers text + image */
+}
+
+/* QR image */
+#imgBox img{
+    width: 120px;
+    padding: 10px;
+}
+
+/* Show animation */
+#imgBox.show-img{
+    max-height: 300px;
+    border: 1px solid rgb(78, 25, 210);
+}
+
+.scan-text{
+    font-weight: bold;
+    font-size: 14px;
+    color: darkblue;
+    margin-top: 10px;
+}
+.downloadbtn{
+    background-color: teal;
+    color: aliceblue;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.downloadbtn:hover{
+    background-color: rgb(1, 55, 55);
+}
+
+footer{
+    position: fixed;
+    bottom:50px;
+    color: antiquewhite;
+}
+footer:hover{
+color: rgb(228, 151, 35);
+}
