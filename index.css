@@ -1,5 +1,5 @@
 body{
-    background-image: url("images/calm.jpg");
+    background-image: url("calm.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     font-family: Arial, sans-serif;
@@ -109,4 +109,5 @@ footer{
 }
 footer:hover{
 color: rgb(228, 151, 35);
+
 }
