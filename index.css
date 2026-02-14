@@ -6,7 +6,6 @@ body{
     margin: 0;
 }
 
-/* Header */
 header h1{
     text-align: center;
 }
@@ -28,7 +27,6 @@ header h1{
     left: 100px;
     right: 100px;
 }
-/* FORM LAYOUT (THIS SOLVES YOUR PROBLEM 🔥) */
 #details{
     position: fixed;
     right: 400px;
@@ -39,14 +37,12 @@ header h1{
     flex-direction: column;
 }
 
-/* Inputs */
 #details input{
     margin-top: 5px;
     padding: 8px;
     font-size: 14px;
 }
 
-/* Button */
 #details button{
     margin-top: 20px;
     padding: 10px;
@@ -61,24 +57,24 @@ header h1{
 }
 #imgBox{
     width: 220px;
-    position: fixed;          /* REQUIRED */
+    position: fixed;      
     top: 250px;
-    right: 80px;              /* pushes QR to right side */
+    right: 80px;            
 
     border-radius: 5px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 1s;
-    text-align: center;       /* centers text + image */
+    text-align: center;    
 }
 
-/* QR image */
+
 #imgBox img{
     width: 120px;
     padding: 10px;
 }
 
-/* Show animation */
+
 #imgBox.show-img{
     max-height: 300px;
     border: 1px solid rgb(78, 25, 210);
@@ -111,3 +107,4 @@ footer:hover{
 color: rgb(228, 151, 35);
 
 }
+
